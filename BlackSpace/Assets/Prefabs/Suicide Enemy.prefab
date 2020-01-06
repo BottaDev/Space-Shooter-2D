@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 959316c071b3a8e4b882589682c19a77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3.5
+  moveSpeed: 4.5
   turnSpeed: 0.1
   repelForce: 1
   repelRange: 0.3
@@ -124,6 +124,7 @@ MonoBehaviour:
   fireRate: 1
   stopDistance: 4
   spawnRate: 5
+  enemyPrefab: {fileID: 0}
   enemySpawnPoints:
   - {fileID: 0}
   - {fileID: 0}

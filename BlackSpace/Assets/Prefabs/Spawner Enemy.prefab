@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 959316c071b3a8e4b882589682c19a77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 4
   turnSpeed: 0.1
   repelForce: 1
   repelRange: 0.3
@@ -164,7 +164,6 @@ MonoBehaviour:
   - {fileID: 7920075275967244045}
   - {fileID: 1986094150449790290}
   - {fileID: 7686031558184293867}
-  currentSpawnRate: 0
 --- !u!50 &2254144746426106503
 Rigidbody2D:
   serializedVersion: 4

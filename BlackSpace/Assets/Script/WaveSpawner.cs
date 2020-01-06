@@ -19,6 +19,9 @@ public class WaveSpawner : MonoBehaviour
 
 	void Update()
 	{
+		if (player == null)
+			return;
+
 		if (currentTime <= 0)
 		{
 			SpawnEnemy();
@@ -33,13 +36,16 @@ public class WaveSpawner : MonoBehaviour
 		Vector2 spawnPos = player.transform.position;
 		spawnPos += Random.insideUnitCircle.normalized * spawnRadius;
 
-		if (Random.Range(0.0f, 1.0f) > 0.5) //%50 percent chance
+		// Suicide %50 percent chance
+		if (Random.Range(0.0f, 1.0f) > 0.5) 
 			Instantiate(enemyPrefab[0], spawnPos, Quaternion.identity);
 
-		if (Random.Range(0.0f, 1.0f) > 0.2) //%80 percent chance (1 - 0.2 is 0.8)
+		// Shooter %80 percent chance (1 - 0.2 = 0.8)
+		if (Random.Range(0.0f, 1.0f) > 0.2) 
 			Instantiate(enemyPrefab[1], spawnPos, Quaternion.identity);
 
-		if (Random.Range(0.0f, 1.0f) > 0.7) //%30 percent chance (1 - 0.7 is 0.3)
+		// Spawner %30 percent chance (1 - 0.7 = 0.3)
+		if (Random.Range(0.0f, 1.0f) > 0.7) 
 			Instantiate(enemyPrefab[2], spawnPos, Quaternion.identity);
 	}
 }

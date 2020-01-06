@@ -33,6 +33,4 @@ public class PlayerController : MonoBehaviour
 		Vector3 mouse = Camera.main.ScreenToWorldPoint(mouseScreen);
 		transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(mouse.y - transform.position.y, mouse.x - transform.position.x) * Mathf.Rad2Deg - 90);
 	}
-
-
 }
