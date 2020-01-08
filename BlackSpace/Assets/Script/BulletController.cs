@@ -19,9 +19,11 @@ public class BulletController : MonoBehaviour
         transform.position += transform.up * speed * Time.deltaTime;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if ((collision.gameObject.layer == 8 && gameObject.layer == 9) || (collision.gameObject.layer == 11 && gameObject.layer == 10))
+        print("Entro");
+
+        if ((collision.gameObject.layer == 8 && gameObject.layer == 9) || (collision.gameObject.layer == 11 && gameObject.layer == 10) || (collision.gameObject.layer == 12))
             Destroy(gameObject);
     }
 }

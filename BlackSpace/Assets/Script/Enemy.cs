@@ -11,6 +11,13 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.layer == 9)
             TakeDamage();
+
+        if (collision.gameObject.layer == 12)
+        {
+            CreateExplosion();
+            Destroy(gameObject);
+        }
+
     }
 
     void TakeDamage()
@@ -18,7 +25,15 @@ public class Enemy : MonoBehaviour
         hp -= 1;
 
         if (hp <= 0)
+        {
+            CreateExplosion();
             Destroy(gameObject);
+        }
+    }
+
+    void CreateExplosion()
+    {
+        // Mostra explosion
     }
 
     public enum EnemyType

@@ -39,9 +39,7 @@ public class EnemyAI : MonoBehaviour
         enemyStats = gameObject.GetComponent<Enemy>();
 
         if (EnemyRBs == null)
-        {
             EnemyRBs = new List<Rigidbody2D>();
-        }
 
         EnemyRBs.Add(rb);
 

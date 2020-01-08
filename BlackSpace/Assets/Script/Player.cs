@@ -6,13 +6,18 @@ public class Player : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == 8 || collision.gameObject.layer == 10)
+        if (collision.gameObject.layer == 8 || collision.gameObject.layer == 10 || collision.gameObject.layer == 12)
             KillPlayer();
     }
 
     void KillPlayer()
     {
-        // Mostrar explosion
+        CreateExplosion();
         Destroy(gameObject);
+    }
+
+    void CreateExplosion()
+    {
+        // Mostrar explosion
     }
 }

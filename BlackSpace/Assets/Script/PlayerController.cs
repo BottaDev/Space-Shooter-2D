@@ -12,17 +12,17 @@ public class PlayerController : MonoBehaviour
 	Vector2 moveInput;
 	Vector2 velocity = Vector2.zero;
 
-	private void Start()
+	void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();
 	}
 
-	private void Update()
+	void Update()
 	{
 		moveInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 	}
 
-	private void FixedUpdate()
+	void FixedUpdate()
 	{
 		rb.velocity = (moveInput * speed);
 
