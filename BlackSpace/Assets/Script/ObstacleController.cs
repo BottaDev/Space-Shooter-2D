@@ -57,7 +57,7 @@ public class ObstacleController : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-            Gizmos.color = Color.yellow;
-            Gizmos.DrawWireSphere(transform.position, maxDistanceToDelete);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, maxDistanceToDelete);
     }
 }

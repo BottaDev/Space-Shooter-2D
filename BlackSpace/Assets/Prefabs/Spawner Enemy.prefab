@@ -147,7 +147,7 @@ MonoBehaviour:
   moveSpeed: 4
   turnSpeed: 0.1
   repelForce: 1
-  repelRange: 0.3
+  repelRange: 0.6
   shootDistance: 2.5
   rotationDistance: 2.8
   shootingSpeed: 2.5
@@ -172,14 +172,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2254144746426137979}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
