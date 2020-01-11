@@ -6,17 +6,17 @@ public class BulletController : MonoBehaviour
 {
     public float speed;
 
-    private void Start()
+    void Start()
     {
         if (gameObject.layer == 9)
             Destroy(gameObject, 2f);
         else if (gameObject.layer == 10)
             Destroy(gameObject, 5f);
     }
-
-    void Update()
+    
+    void FixedUpdate()
     {
-        transform.position += transform.up * speed * Time.deltaTime;
+        transform.position += transform.up * speed * Time.fixedDeltaTime;
     }
 
     void OnTriggerEnter2D(Collider2D collision)
