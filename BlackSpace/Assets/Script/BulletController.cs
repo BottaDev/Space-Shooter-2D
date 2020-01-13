@@ -5,6 +5,7 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
     public float speed;
+    public GameObject effect;
 
     void Start()
     {

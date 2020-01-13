@@ -50,9 +50,10 @@ public class WaveSpawner : MonoBehaviour
 
 	void SpawnObstacle()
 	{
+		// Spawn Asteroides
 		if (Random.Range(0.0f, 1.0f) > 0.4f)
 		{
-			/*
+			
 			if (Random.Range(0.0f, 1.0f) >= 0.6f)
 			{
 				Vector2 spawnPos = player.transform.position;
@@ -67,11 +68,6 @@ public class WaveSpawner : MonoBehaviour
 
 				Instantiate(obstaclePrefab[1], spawnPos, Quaternion.identity);
 			}
-			*/
-			Vector2 spawnPos = player.transform.position;
-			spawnPos += Random.insideUnitCircle.normalized * enemySpawnRadius;
-
-			Instantiate(obstaclePrefab[0], spawnPos, Quaternion.identity);
 		}
 
 		// Spawn Agujero negro
@@ -80,7 +76,7 @@ public class WaveSpawner : MonoBehaviour
 			Vector2 spawnPos = player.transform.position;
 			spawnPos += Random.insideUnitCircle.normalized * enemySpawnRadius;
 
-			Instantiate(enemyPrefab[1], spawnPos, Quaternion.identity);
+			Instantiate(enemyPrefab[2], spawnPos, Quaternion.identity);
 		}
 	}
 

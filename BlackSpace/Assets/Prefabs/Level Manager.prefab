@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3236670099142967390}
   - component: {fileID: 1108660247417146753}
-  - component: {fileID: 6772531644619706124}
   - component: {fileID: 3236670099142967385}
+  - component: {fileID: 6772531644619706124}
   m_Layer: 0
   m_Name: Level Manager
   m_TagString: Untagged
@@ -46,19 +46,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelTime: 60
---- !u!114 &6772531644619706124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3236670099142967384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d53c6b8bfd176241967bfe6d23cf229, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timer: {fileID: 0}
 --- !u!114 &3236670099142967385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,10 +62,24 @@ MonoBehaviour:
   - {fileID: 2254144746426137979, guid: fe194c5f584e7ca4aba48fe464d866a7, type: 3}
   - {fileID: 2254144746426137979, guid: 83c947d9d5b297f4cb88feb324aac643, type: 3}
   - {fileID: 2254144746426137979, guid: 6ff5f57de7a66af47a735794079cb5cd, type: 3}
-  enemySpawnRate: 2.5
-  enemySpawnRadius: 5
+  enemySpawnRate: 3.5
+  enemySpawnRadius: 20
   obstaclePrefab:
   - {fileID: 4768096441635552723, guid: b2e2c87411dc3df4b9f91ac4893fd50c, type: 3}
+  - {fileID: 4768096441635552723, guid: f45d1d7715e6ca44b9559a2f8d3c60e7, type: 3}
   - {fileID: 6928046350459968463, guid: d27210e92e32268429d055b1419572cd, type: 3}
   obstacleSpawnRate: 10
-  obstacleSpawnRadius: 8
+  obstacleSpawnRadius: 20
+--- !u!114 &6772531644619706124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3236670099142967384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d53c6b8bfd176241967bfe6d23cf229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: {fileID: 0}

@@ -9,6 +9,7 @@ public class ObstacleController : MonoBehaviour
     public float rotationSpeed = 10f;
     public float maxDistanceToDelete = 50f;
     public GameObject sprite;
+    public Sprite[] spriteAsteroid;
 
     GameObject player;
     Vector2 direction;
@@ -21,6 +22,8 @@ public class ObstacleController : MonoBehaviour
         direction = player.transform.position - transform.position;
 
         goToRight = Random.Range(0, 2) == 0 ? true : false;
+
+        SelectSprite();
     }
 
     void Update()
@@ -53,6 +56,15 @@ public class ObstacleController : MonoBehaviour
 
         if (hp <= 0)
             Destroy(gameObject);
+    }
+
+    void SelectSprite()
+    {
+        SpriteRenderer sr = sprite.GetComponent<SpriteRenderer>();
+
+        int index = Random.Range(0, spriteAsteroid.Length);
+
+        sr.sprite = spriteAsteroid[index];
     }
 
     private void OnDrawGizmos()

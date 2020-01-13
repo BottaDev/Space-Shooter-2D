@@ -107,7 +107,6 @@ public class EnemyAI : MonoBehaviour
             else if (currentSpawnRate > 0)
                 currentSpawnRate -= Time.fixedDeltaTime;
                 
-
             if (distance > stopDistance)
             {
                 newPos = CalculatePosition(direction);
@@ -187,9 +186,9 @@ public class EnemyAI : MonoBehaviour
         EnemyRBs.Remove(rb);
     }
 
-    /*private void OnDrawGizmos()
+    void OnDrawGizmos()
     {
-            Gizmos.color = Color.yellow;
-            Gizmos.DrawWireSphere(transform.position, shootDistance);
-    }*/
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, repelRange);
+    }
 }
