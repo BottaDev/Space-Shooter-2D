@@ -67,7 +67,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.5
+  m_Radius: 3.5
 --- !u!1 &6928046350459968463
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,8 +162,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd22ea2443b36c54c9df9e6f879d290a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceMagnitude: -100
-  forceRadius: 1.5
+  forceMagnitude: -300
+  forceRadius: 3.5
   maxDistanceToDelete: 50
 --- !u!70 &5776480779184345581
 CapsuleCollider2D:
