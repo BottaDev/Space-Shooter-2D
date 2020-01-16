@@ -51,10 +51,9 @@ public class WaveSpawner : MonoBehaviour
 	void SpawnObstacle()
 	{
 		// Spawn Asteroides
-		if (Random.Range(0.0f, 1.0f) > 0.4f)
+		if (Random.Range(0.1f, 1.0f) > 0.4f)
 		{
-			
-			if (Random.Range(0.0f, 1.0f) >= 0.6f)
+			if (Random.Range(0.1f, 1.0f) >= 0.6f)
 			{
 				Vector2 spawnPos = player.transform.position;
 				spawnPos += Random.insideUnitCircle.normalized * enemySpawnRadius;
@@ -71,7 +70,7 @@ public class WaveSpawner : MonoBehaviour
 		}
 
 		// Spawn Agujero negro
-		if (Random.Range(0.0f, 1.0f) > 0.8)
+		if (Random.Range(0.1f, 1.0f) > 0.8)
 		{
 			Vector2 spawnPos = player.transform.position;
 			spawnPos += Random.insideUnitCircle.normalized * enemySpawnRadius;
@@ -83,7 +82,7 @@ public class WaveSpawner : MonoBehaviour
 	void SpawnEnemy()
 	{
 		// Suicide %50 percent chance
-		if (Random.Range(0.0f, 1.0f) > 0.5)
+		if (Random.Range(0.1f, 1.0f) > 0.5)
 		{
 			Vector2 spawnPos = player.transform.position;
 			spawnPos += Random.insideUnitCircle.normalized * enemySpawnRadius;
@@ -92,7 +91,7 @@ public class WaveSpawner : MonoBehaviour
 		} 
 
 		// Shooter %80 percent chance (1 - 0.2 = 0.8)
-		if (Random.Range(0.0f, 1.0f) > 0.2)
+		if (Random.Range(0.1f, 1.0f) > 0.2)
 		{
 			Vector2 spawnPos = player.transform.position;
 			spawnPos += Random.insideUnitCircle.normalized * enemySpawnRadius;
@@ -101,7 +100,7 @@ public class WaveSpawner : MonoBehaviour
 		} 
 
 		// Spawner %30 percent chance (1 - 0.7 = 0.3)
-		if (Random.Range(0.0f, 1.0f) > 0.7)
+		if (Random.Range(0.1f, 1.0f) > 0.7)
 		{
 			Vector2 spawnPos = player.transform.position;
 			spawnPos += Random.insideUnitCircle.normalized * enemySpawnRadius;

@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     float timeLeft;
 
     UIManager uiManager;
+    PowerUpDroppable pud;
 
     void Awake()
     {
@@ -18,11 +19,9 @@ public class GameManager : MonoBehaviour
             instance = this;
         else if (instance != this)
             Destroy(gameObject);
-    }
 
-    void Start()
-    {
         uiManager = GetComponent<UIManager>();
+        pud = GetComponent<PowerUpDroppable>();
 
         uiManager.SetTimer(levelTime);
 
@@ -33,5 +32,10 @@ public class GameManager : MonoBehaviour
     {
         timeLeft -= Time.deltaTime;
         uiManager.SetTimer(timeLeft);
+    }
+
+    public void DropPowerUp(Vector3 position)
+    {
+        pud.DropPowerUp(position);
     }
 }

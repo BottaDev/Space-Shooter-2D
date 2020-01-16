@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public bool speedBuffActive = false;
+    public bool rateBuffActive = false;
+
+    float speedBuffDuration;    
+    float rateBuffDuration;
     float defaultSpeed;
     float defaultRate;
-    [SerializeField]
-    float speedBuffDuration;
-    [SerializeField]
-    float rateBuffDuration;
-
+    
     PlayerShoot playerShoot;
     PlayerController playerController;
 
@@ -30,21 +31,29 @@ public class Player : MonoBehaviour
 
     void CheckPowerUps()
     {
-        if (speedBuffDuration > 0)
-            speedBuffDuration -= Time.deltaTime;
-        else if (speedBuffDuration <= 0)
+        if (speedBuffActive)
         {
-            speedBuffDuration = 0;
-            playerController.SetSpeed(defaultSpeed);
+            if (speedBuffDuration > 0)
+                speedBuffDuration -= Time.deltaTime;
+            else if (speedBuffDuration <= 0)
+            {
+                speedBuffActive = false;
+                speedBuffDuration = 0;
+                playerController.SetSpeed(defaultSpeed);
+            }
         }
-            
-        if (rateBuffDuration > 0)
-            rateBuffDuration -= Time.deltaTime;
-        else if (rateBuffDuration <= 0)
+
+        if (rateBuffActive)
         {
-            rateBuffDuration = 0;
-            playerShoot.SetFireRate(defaultRate);
-        }
+            if (rateBuffDuration > 0)
+                rateBuffDuration -= Time.deltaTime;
+            else if (rateBuffDuration <= 0)
+            {
+                rateBuffActive = false;
+                rateBuffDuration = 0;
+                playerShoot.SetFireRate(defaultRate);
+            }
+        }   
     }
 
     void KillPlayer()
@@ -58,8 +67,11 @@ public class Player : MonoBehaviour
         // Mostrar explosion
     }
 
-    void SetPowerUp(string type, float power, float duration)
+    void SetPowerUp(string type, float power, float duration, GameObject buffObject)
     {
+        // Se destruyen los buff en esta funcion, porque el tiempo de respuesta de OnTriggerEnter2D es menor al OnTriggerEnter2D del player, lo que causa que 
+        // nunca se destruya el buff si se utiliza su OnTriggerEnter2D
+
         switch (type)
         {
             case "Weapon":
@@ -67,6 +79,8 @@ public class Player : MonoBehaviour
                 {
                     playerShoot.SetFireRate(power);
                     rateBuffDuration = duration;
+                    rateBuffActive = true;
+                    Destroy(buffObject);
                 }
                 break;
 
@@ -75,19 +89,11 @@ public class Player : MonoBehaviour
                 {
                     playerController.SetSpeed(power);
                     speedBuffDuration = duration;
+                    speedBuffActive = true;
+                    Destroy(buffObject);
                 }
                 break;
         }
-    }
-
-    public float GetRateBuffDuration()
-    {
-        return rateBuffDuration;
-    }
-
-    public float GetSpeedBuffDuration()
-    {
-        return speedBuffDuration;
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -98,12 +104,12 @@ public class Player : MonoBehaviour
         if (collision.gameObject.layer == 13)
         {
             PowerUpController puc = collision.gameObject.GetComponent<PowerUpController>();
-
-            SetPowerUp(puc.powerType.ToString(), puc.buff, puc.duration);
+            
+            SetPowerUp(puc.powerType.ToString(), puc.buff, puc.duration, collision.gameObject);
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.layer == 12)
             KillPlayer();

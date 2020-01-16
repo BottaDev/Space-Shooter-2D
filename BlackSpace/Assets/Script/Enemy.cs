@@ -27,6 +27,7 @@ public class Enemy : MonoBehaviour
         if (hp <= 0)
         {
             CreateExplosion();
+            GameManager.instance.DropPowerUp(transform.position);
             Destroy(gameObject);
         }
     }
