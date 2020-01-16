@@ -17,8 +17,7 @@ public class BlackHole : MonoBehaviour
         effector = gameObject.GetComponentInChildren<PointEffector2D>();
         circleCollider = gameObject.GetComponentInChildren<CircleCollider2D>();
 
-        // Ley de gravedad de Newton
-        effector.forceMode = EffectorForceMode2D.InverseSquared;
+       effector.forceMode = EffectorForceMode2D.Constant;
 
         player = GameObject.Find("Player");
     }

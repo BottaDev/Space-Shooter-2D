@@ -6,6 +6,7 @@ public class PlayerShoot : MonoBehaviour
 {
     public Transform spawnPoint;
     public GameObject bulletPrefab;
+    [Range(0.1f, 1f)]
     public float fireRate = 0.5f;
 
     float currentRate = 0;
@@ -26,5 +27,10 @@ public class PlayerShoot : MonoBehaviour
         Instantiate(bulletPrefab, spawnPoint.position, spawnPoint.rotation);
 
         currentRate = fireRate;
+    }
+
+    public void SetFireRate(float rate)
+    {
+        fireRate = rate;
     }
 }
