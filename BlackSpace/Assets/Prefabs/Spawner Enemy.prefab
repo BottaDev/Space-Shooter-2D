@@ -113,18 +113,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 959316c071b3a8e4b882589682c19a77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 6
   turnSpeed: 0.05
   repelForce: 1
   repelRange: 1.5
-  shootDistance: 2.5
-  rotationDistance: 2.8
-  shootingSpeed: 2.5
+  shootDistance: 0
+  rotationDistance: 0
+  shootingSpeed: 0
   bulletPrefab: {fileID: 5748591129016056024, guid: acaf8956f68b7a54591a94f4719d0982,
     type: 3}
   spawnPoint: {fileID: 0}
   fireRate: 1
-  stopDistance: 4
+  stopDistance: 7
   spawnRate: 5
   enemyPrefab: {fileID: 2254144746426137979, guid: fe194c5f584e7ca4aba48fe464d866a7,
     type: 3}
