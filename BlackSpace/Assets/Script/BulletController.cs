@@ -23,6 +23,12 @@ public class BulletController : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         if ((collision.gameObject.layer == 8 && gameObject.layer == 9) || (collision.gameObject.layer == 11 && gameObject.layer == 10) || (collision.gameObject.layer == 12))
-            Destroy(gameObject);
+            DestroyBullet();
+    }
+
+    void DestroyBullet()
+    {
+        Instantiate(effect, transform.position, transform.rotation);
+        Destroy(gameObject);
     }
 }

@@ -30,6 +30,9 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        if (timeLeft <= 0)
+            timeLeft = 0;
+
         timeLeft -= Time.deltaTime;
         uiManager.SetTimer(timeLeft);
     }

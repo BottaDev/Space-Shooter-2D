@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 959316c071b3a8e4b882589682c19a77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 6
+  moveSpeed: 4.5
   turnSpeed: 0.05
   repelForce: 1
   repelRange: 1.5
