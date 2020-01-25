@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [HideInInspector]
     public bool speedBuffActive = false;
+    [HideInInspector]
     public bool rateBuffActive = false;
 
     float speedBuffDuration;    

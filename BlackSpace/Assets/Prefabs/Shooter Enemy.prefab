@@ -111,12 +111,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  turnSpeed: 0.5
-  repelForce: 5
+  turnSpeed: 0.3
+  repelForce: 3
   repelRange: 1
   shootDistance: 8
   rotationDistance: 10
-  shootingSpeed: 5
+  shootingSpeed: 2.5
   bulletPrefab: {fileID: 5748591129016056024, guid: acaf8956f68b7a54591a94f4719d0982,
     type: 3}
   spawnPoint: {fileID: 2493676439532566248}
