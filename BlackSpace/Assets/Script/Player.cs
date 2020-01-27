@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     [HideInInspector]
     public bool rateBuffActive = false;
 
+    public Renderer engineRenderer;
+
     float speedBuffDuration;    
     float rateBuffDuration;
     float defaultSpeed;
@@ -16,11 +18,15 @@ public class Player : MonoBehaviour
     
     PlayerShoot playerShoot;
     PlayerController playerController;
+    Animator anim;
+    Rigidbody2D rb;
 
     void Awake()
     {
         playerShoot = GetComponent<PlayerShoot>();
         playerController = GetComponent<PlayerController>();
+        anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
 
         defaultRate = playerShoot.fireRate;
         defaultSpeed = playerController.moveSpeed;
@@ -28,7 +34,12 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        CheckPowerUps();    
+        CheckPowerUps();
+
+        if (rb.velocity != Vector2.zero)
+            engineRenderer.enabled = true;
+        else
+            engineRenderer.enabled = false;
     }
 
     void CheckPowerUps()

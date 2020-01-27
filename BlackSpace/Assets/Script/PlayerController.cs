@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 {
 	public float moveSpeed = 5f;
 	public float moveSmooth = .3f;
-
+	
 	Rigidbody2D rb;
 	Vector2 moveInput;
 	Vector2 velocity = Vector2.zero;
