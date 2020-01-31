@@ -19,13 +19,13 @@ public class PlayerController : MonoBehaviour
 
 	void Update()
 	{
-		moveInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+		moveInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));	
 	}
 
 	void FixedUpdate()
 	{
 		rb.velocity = (moveInput * moveSpeed);
-
+			
 		Vector2 desiredVelocity = moveInput * moveSpeed;
 		rb.velocity = Vector2.SmoothDamp(rb.velocity, desiredVelocity, ref velocity, moveSmooth);
 
