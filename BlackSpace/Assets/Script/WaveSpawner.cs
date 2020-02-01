@@ -69,7 +69,6 @@ public class WaveSpawner : MonoBehaviour
 			}
 		}
 
-		// Spawn Agujero negro
 		if (Random.Range(0.1f, 1.0f) > 0.8)
 		{
 			Vector2 spawnPos = player.transform.position;

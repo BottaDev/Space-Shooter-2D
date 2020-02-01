@@ -72,7 +72,7 @@ MonoBehaviour:
   obstaclePrefab:
   - {fileID: 4768096441635552723, guid: b2e2c87411dc3df4b9f91ac4893fd50c, type: 3}
   - {fileID: 4768096441635552723, guid: f45d1d7715e6ca44b9559a2f8d3c60e7, type: 3}
-  - {fileID: 6928046350459968463, guid: d27210e92e32268429d055b1419572cd, type: 3}
+  - {fileID: 8086552942952432579, guid: 9988862152853d843994b0e38df5163e, type: 3}
   obstacleSpawnRate: 10
   obstacleSpawnRadius: 20
 --- !u!114 &6772531644619706124
@@ -88,6 +88,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 0}
+  youWin_Text: {fileID: 0}
+  youLose_Text: {fileID: 0}
+  menu: {fileID: 0}
 --- !u!114 &3221108339966060228
 MonoBehaviour:
   m_ObjectHideFlags: 0

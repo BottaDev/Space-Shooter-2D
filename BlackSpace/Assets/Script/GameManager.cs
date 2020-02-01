@@ -61,13 +61,13 @@ public class GameManager : MonoBehaviour
 
     public void WinGame()
     {
-        // Mostrar you win
+        uiManager.ShowMenu(true);
         print("YOU WIN!");
     }
 
     public void LoseGame()
     {
-        // Mostrar you lose
+        uiManager.ShowMenu(false);
         print("YOU LOSE!");
     }
 

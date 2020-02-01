@@ -72,6 +72,9 @@ public class Player : MonoBehaviour
     void KillPlayer()
     {
         CreateExplosion();
+
+        GameManager.instance.LoseGame();
+
         Destroy(gameObject);
     }
 
