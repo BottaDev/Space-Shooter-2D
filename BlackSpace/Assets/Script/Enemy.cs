@@ -28,6 +28,7 @@ public class Enemy : MonoBehaviour
         {
             CreateExplosion();
             GameManager.instance.DropPowerUp(transform.position);
+            AddPoint();
             Destroy(gameObject);
         }
     }
@@ -35,6 +36,11 @@ public class Enemy : MonoBehaviour
     void CreateExplosion()
     {
         // Mostra explosion
+    }
+
+    void AddPoint()
+    {
+
     }
 
     public enum EnemyType
