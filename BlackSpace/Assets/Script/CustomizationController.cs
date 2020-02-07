@@ -7,7 +7,7 @@ using TMPro;
 public class CustomizationController : MonoBehaviour
 {
     [Header("Variables")]
-    public int[] killsNeeded;
+    public int[] creditsNeeded;
     public Sprite[] ships;
     public string[] shipName;
 
@@ -15,7 +15,7 @@ public class CustomizationController : MonoBehaviour
     public Image spriteShip;
     public TextMeshProUGUI colorText;
     public TextMeshProUGUI shipNameText;
-    public TextMeshProUGUI killsText;
+    public TextMeshProUGUI CreditsText;
     public TextMeshProUGUI adviseText;
 
     // 1 = Hurricane
@@ -31,15 +31,15 @@ public class CustomizationController : MonoBehaviour
     [Range(min: 0, max: 3)]
     int currentShipColor = 0;
 
-    int totalEnemyKills = 0;
+    int totalCredits = 0;
 
-    void Start()
+    void Awake()
     {
-        totalEnemyKills =  PlayerPrefs.GetInt("EnemyKills");
+        totalCredits =  PlayerPrefs.GetInt("Credits");
         currentShip = PlayerPrefs.GetInt("PlayerShip");
         currentShipColor = PlayerPrefs.GetInt("ShipColor");
 
-        killsText.text = totalEnemyKills.ToString();
+        CreditsText.text = totalCredits.ToString();
         adviseText.enabled = false;
 
         ChangeColor(0);
@@ -48,9 +48,12 @@ public class CustomizationController : MonoBehaviour
     
     public void EquipShip()
     {
+        // OPTIMIZAR
+
         if (currentShip == 0)
         {
             PlayerPrefs.SetInt("PlayerShip", currentShip);
+            PlayerPrefs.SetInt("ShipColor", currentShipColor);
             PlayerPrefs.Save();
         }
         else if (currentShip == 1)
@@ -58,12 +61,13 @@ public class CustomizationController : MonoBehaviour
             if (CheckKills(currentShip))
             {
                 PlayerPrefs.SetInt("PlayerShip", currentShip);
+                PlayerPrefs.SetInt("ShipColor", currentShipColor);
                 PlayerPrefs.Save();
             }
             else
             {
                 adviseText.enabled = true;
-                adviseText.text = "You have to destroy " + killsNeeded[0] + " enemies to equip this ship!";
+                adviseText.text = "You need " + creditsNeeded[0] + " enemies to equip this ship!";
             }
         }
         else if (currentShip == 2)
@@ -71,12 +75,13 @@ public class CustomizationController : MonoBehaviour
             if (CheckKills(currentShip))
             {
                 PlayerPrefs.SetInt("PlayerShip", currentShip);
+                PlayerPrefs.SetInt("ShipColor", currentShipColor);
                 PlayerPrefs.Save();
             }
             else
             {
                 adviseText.enabled = true;
-                adviseText.text = "You have to destroy " + killsNeeded[1] + " enemies to equip this ship!";
+                adviseText.text = "You have to destroy " + creditsNeeded[1] + " enemies to equip this ship!";
             }
                 
         }
@@ -86,14 +91,14 @@ public class CustomizationController : MonoBehaviour
     {
         if (ship == 1)
         {
-            if (totalEnemyKills >= killsNeeded[0])
+            if (totalCredits >= creditsNeeded[0])
                 return true;
             else
                 return false;
         }
-        else if (ship == 2 && totalEnemyKills >= killsNeeded[1])
+        else if (ship == 2 && totalCredits >= creditsNeeded[1])
         {
-            if (totalEnemyKills >= killsNeeded[1])
+            if (totalCredits >= creditsNeeded[1])
                 return true;
             else
                 return false;

@@ -40,7 +40,12 @@ public class Enemy : MonoBehaviour
 
     void AddPoint()
     {
-
+        if (enemyType == EnemyType.Suicide)
+            GameManager.instance.AddCredits(1);
+        else if (enemyType == EnemyType.Shooter)
+            GameManager.instance.AddCredits(2);
+        else if (enemyType == EnemyType.Spawner)
+            GameManager.instance.AddCredits(3);
     }
 
     public enum EnemyType

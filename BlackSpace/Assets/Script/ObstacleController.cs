@@ -17,7 +17,7 @@ public class ObstacleController : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.Find("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
 
         direction = player.transform.position - transform.position;
 

@@ -51,6 +51,19 @@ MonoBehaviour:
   portalDistance: 200
   portalPrefab: {fileID: 1301744629049019902, guid: 68ae2e795195dd64b8028795c9192ea1,
     type: 3}
+  playerPrefab:
+  - {fileID: 2194034985151066307, guid: 7f3fff54cfa44474e9d6b4b165d7de7e, type: 3}
+  - {fileID: 2194034985151066307, guid: fec6b61cad979924a93494552f94f878, type: 3}
+  - {fileID: 2194034985151066307, guid: d9661d48e02cf4c47ac1f58bb15b6eea, type: 3}
+  - {fileID: 2194034985151066307, guid: 758554bb2af295d489b4070a16d59361, type: 3}
+  - {fileID: 2194034985151066307, guid: 679fad3f4f40a8c41bef828abef158bc, type: 3}
+  - {fileID: 2194034985151066307, guid: 8217b4a104369f348a93aa49055b4146, type: 3}
+  - {fileID: 2194034985151066307, guid: 24bd90c9feb5d4c4997f490a20617905, type: 3}
+  - {fileID: 2194034985151066307, guid: ba526218c49b0e4458698e93e9238855, type: 3}
+  - {fileID: 2194034985151066307, guid: 551f1cffc1bf4d646838f4efdd10bb1b, type: 3}
+  - {fileID: 2194034985151066307, guid: 5c2d4a29265065044a3dbe5bd3cf1134, type: 3}
+  - {fileID: 2194034985151066307, guid: e2ae83e8414de3a4bb874f2da238ad29, type: 3}
+  - {fileID: 2194034985151066307, guid: 50b1b5c47c599824b801499a39a0abdb, type: 3}
 --- !u!114 &3236670099142967385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,6 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 0}
+  creditsText: {fileID: 0}
   youWin_Text: {fileID: 0}
   youLose_Text: {fileID: 0}
   menu: {fileID: 0}

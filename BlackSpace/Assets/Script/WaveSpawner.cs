@@ -20,7 +20,7 @@ public class WaveSpawner : MonoBehaviour
 
 	void Start()
 	{
-		player = GameObject.Find("Player");
+		player = GameObject.FindGameObjectWithTag("Player");
 
 		currentEnemyTime = 0;
 		currentObstacleTime = 0;

@@ -6,6 +6,7 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     public TextMeshProUGUI timer;
+    public TextMeshProUGUI creditsText;
     public GameObject youWin_Text;
     public GameObject youLose_Text;
     public GameObject menu;
@@ -13,6 +14,11 @@ public class UIManager : MonoBehaviour
     public void SetTimer(float timeLeft)
     {
         timer.text = timeLeft.ToString("F2");
+    }
+
+    public void SetCredits(int credits)
+    {
+        creditsText.text = "" + credits.ToString("0000");
     }
 
     public void ShowMenu(bool playerWin)
