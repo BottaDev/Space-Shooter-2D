@@ -144,8 +144,6 @@ public class GameManager : MonoBehaviour
             else if (currentShipColor == 3)
                 Instantiate(playerPrefab[11], new Vector3(0, 0, 0), Quaternion.identity);
         }
-
-        print("Spawneo");
     }
 
     public void AddCredits(int credits)

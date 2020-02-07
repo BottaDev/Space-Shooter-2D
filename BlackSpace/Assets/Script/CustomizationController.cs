@@ -17,19 +17,20 @@ public class CustomizationController : MonoBehaviour
     public TextMeshProUGUI shipNameText;
     public TextMeshProUGUI CreditsText;
     public TextMeshProUGUI adviseText;
+    public TextMeshProUGUI equipedText;
 
     // 1 = Hurricane
     // 2 = Confidence
     // 3 = Sparrow
     [Range(min: 0, max: 2)]
-    int currentShip = 0;
+    public int currentShip = 0;
 
     // 1 = Blue
     // 2 = Green
     // 3 = Orange
     // 4 = Red
     [Range(min: 0, max: 3)]
-    int currentShipColor = 0;
+    public int currentShipColor = 0;
 
     int totalCredits = 0;
 
@@ -55,6 +56,9 @@ public class CustomizationController : MonoBehaviour
             PlayerPrefs.SetInt("PlayerShip", currentShip);
             PlayerPrefs.SetInt("ShipColor", currentShipColor);
             PlayerPrefs.Save();
+
+            equipedText.enabled = true;
+            StartCoroutine(DisableText());
         }
         else if (currentShip == 1)
         {
@@ -63,11 +67,14 @@ public class CustomizationController : MonoBehaviour
                 PlayerPrefs.SetInt("PlayerShip", currentShip);
                 PlayerPrefs.SetInt("ShipColor", currentShipColor);
                 PlayerPrefs.Save();
+
+                equipedText.enabled = true;
+                StartCoroutine(DisableText());
             }
             else
             {
                 adviseText.enabled = true;
-                adviseText.text = "You need " + creditsNeeded[0] + " enemies to equip this ship!";
+                adviseText.text = "You need " + creditsNeeded[0] + " credits to equip this ship!";
             }
         }
         else if (currentShip == 2)
@@ -77,11 +84,14 @@ public class CustomizationController : MonoBehaviour
                 PlayerPrefs.SetInt("PlayerShip", currentShip);
                 PlayerPrefs.SetInt("ShipColor", currentShipColor);
                 PlayerPrefs.Save();
+
+                equipedText.enabled = true;
+                StartCoroutine(DisableText());
             }
             else
             {
                 adviseText.enabled = true;
-                adviseText.text = "You have to destroy " + creditsNeeded[1] + " enemies to equip this ship!";
+                adviseText.text = "You need " + creditsNeeded[1] + " credits to equip this ship!";
             }
                 
         }
@@ -181,5 +191,14 @@ public class CustomizationController : MonoBehaviour
 
             shipNameText.text = shipName[2];
         }
+    }
+
+    IEnumerator DisableText()
+    {
+        yield return new WaitForSeconds(1.5f);
+
+        equipedText.enabled = false;
+
+        yield return null;
     }
 }

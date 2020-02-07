@@ -7,9 +7,15 @@ public class UIManager : MonoBehaviour
 {
     public TextMeshProUGUI timer;
     public TextMeshProUGUI creditsText;
+    public GameObject tutorialArea;
     public GameObject youWin_Text;
     public GameObject youLose_Text;
     public GameObject menu;
+
+    void Start()
+    {
+        StartCoroutine(DisableTutorial());    
+    }
 
     public void SetTimer(float timeLeft)
     {
@@ -29,5 +35,14 @@ public class UIManager : MonoBehaviour
             youWin_Text.SetActive(true);
         if (!playerWin)
             youLose_Text.SetActive(true);
+    }
+
+    public IEnumerator DisableTutorial()
+    {
+        yield return new WaitForSeconds(3f);
+
+        tutorialArea.SetActive(false);
+
+        yield return null;
     }
 }
