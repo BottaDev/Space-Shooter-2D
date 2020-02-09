@@ -32,9 +32,15 @@ public class UIManager : MonoBehaviour
         menu.SetActive(true);
 
         if (playerWin)
+        {
             youWin_Text.SetActive(true);
-        if (!playerWin)
+            youLose_Text.SetActive(false);
+        }
+        else 
+        {
+            youWin_Text.SetActive(false);
             youLose_Text.SetActive(true);
+        }  
     }
 
     public IEnumerator DisableTutorial()

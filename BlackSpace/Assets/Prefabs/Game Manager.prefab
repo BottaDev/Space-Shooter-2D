@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3236670099142967390}
   - component: {fileID: 1108660247417146753}
+  - component: {fileID: 5998253631526959747}
   - component: {fileID: 3236670099142967385}
   - component: {fileID: 6772531644619706124}
   - component: {fileID: 3221108339966060228}
@@ -47,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelTime: 60
-  portalTime: 60
+  portalTime: 30
   portalDistance: 200
   portalPrefab: {fileID: 1301744629049019902, guid: 68ae2e795195dd64b8028795c9192ea1,
     type: 3}
@@ -64,6 +65,90 @@ MonoBehaviour:
   - {fileID: 2194034985151066307, guid: 5c2d4a29265065044a3dbe5bd3cf1134, type: 3}
   - {fileID: 2194034985151066307, guid: e2ae83e8414de3a4bb874f2da238ad29, type: 3}
   - {fileID: 2194034985151066307, guid: 50b1b5c47c599824b801499a39a0abdb, type: 3}
+--- !u!114 &5998253631526959747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3236670099142967384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 714eae180e3ce6140a9a7d4abe95c5a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficulty: 0
+  wave:
+  - enemies:
+    - enemyPrefab: {fileID: 2254144746426137979, guid: fe194c5f584e7ca4aba48fe464d866a7,
+        type: 3}
+      spawnChance: 1
+    enemySpawnRate: 1
+    enemySpawnRadius: 16
+    obstacles:
+    - obstaclePrefab: {fileID: 4768096441635552723, guid: f45d1d7715e6ca44b9559a2f8d3c60e7,
+        type: 3}
+      spawnChance: 0.5
+    obstacleSpawnRate: 10
+    obstacleSpawnRadius: 20
+  - enemies:
+    - enemyPrefab: {fileID: 2254144746426137979, guid: fe194c5f584e7ca4aba48fe464d866a7,
+        type: 3}
+      spawnChance: 1
+    - enemyPrefab: {fileID: 2254144746426137979, guid: 83c947d9d5b297f4cb88feb324aac643,
+        type: 3}
+      spawnChance: 0.5
+    enemySpawnRate: 1.5
+    enemySpawnRadius: 18
+    obstacles:
+    - obstaclePrefab: {fileID: 4768096441635552723, guid: b2e2c87411dc3df4b9f91ac4893fd50c,
+        type: 3}
+      spawnChance: 0.5
+    obstacleSpawnRate: 12
+    obstacleSpawnRadius: 10
+  - enemies:
+    - enemyPrefab: {fileID: 2254144746426137979, guid: fe194c5f584e7ca4aba48fe464d866a7,
+        type: 3}
+      spawnChance: 1
+    - enemyPrefab: {fileID: 2254144746426137979, guid: 83c947d9d5b297f4cb88feb324aac643,
+        type: 3}
+      spawnChance: 0.7
+    enemySpawnRate: 1.85
+    enemySpawnRadius: 20
+    obstacles:
+    - obstaclePrefab: {fileID: 4768096441635552723, guid: f45d1d7715e6ca44b9559a2f8d3c60e7,
+        type: 3}
+      spawnChance: 0.4
+    - obstaclePrefab: {fileID: 4768096441635552723, guid: b2e2c87411dc3df4b9f91ac4893fd50c,
+        type: 3}
+      spawnChance: 0.5
+    obstacleSpawnRate: 15
+    obstacleSpawnRadius: 12
+  - enemies:
+    - enemyPrefab: {fileID: 2254144746426137979, guid: fe194c5f584e7ca4aba48fe464d866a7,
+        type: 3}
+      spawnChance: 1
+    - enemyPrefab: {fileID: 2254144746426137979, guid: 83c947d9d5b297f4cb88feb324aac643,
+        type: 3}
+      spawnChance: 0.7
+    - enemyPrefab: {fileID: 2254144746426137979, guid: 6ff5f57de7a66af47a735794079cb5cd,
+        type: 3}
+      spawnChance: 0.4
+    enemySpawnRate: 2.2
+    enemySpawnRadius: 22
+    obstacles:
+    - obstaclePrefab: {fileID: 4768096441635552723, guid: f45d1d7715e6ca44b9559a2f8d3c60e7,
+        type: 3}
+      spawnChance: 0.4
+    - obstaclePrefab: {fileID: 4768096441635552723, guid: b2e2c87411dc3df4b9f91ac4893fd50c,
+        type: 3}
+      spawnChance: 0.5
+    - obstaclePrefab: {fileID: 8086552942952432579, guid: 9988862152853d843994b0e38df5163e,
+        type: 3}
+      spawnChance: 0.3
+    obstacleSpawnRate: 18
+    obstacleSpawnRadius: 28
+  waveSpawner: {fileID: 3236670099142967385}
 --- !u!114 &3236670099142967385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,18 +161,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2db6c16b52db2348a2f207e64070d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab:
-  - {fileID: 2254144746426137979, guid: fe194c5f584e7ca4aba48fe464d866a7, type: 3}
-  - {fileID: 2254144746426137979, guid: 83c947d9d5b297f4cb88feb324aac643, type: 3}
-  - {fileID: 2254144746426137979, guid: 6ff5f57de7a66af47a735794079cb5cd, type: 3}
-  enemySpawnRate: 3.5
-  enemySpawnRadius: 20
-  obstaclePrefab:
-  - {fileID: 4768096441635552723, guid: b2e2c87411dc3df4b9f91ac4893fd50c, type: 3}
-  - {fileID: 4768096441635552723, guid: f45d1d7715e6ca44b9559a2f8d3c60e7, type: 3}
-  - {fileID: 8086552942952432579, guid: 9988862152853d843994b0e38df5163e, type: 3}
-  obstacleSpawnRate: 10
-  obstacleSpawnRadius: 20
+  currentWave:
+    enemies: []
+    enemySpawnRate: 1
+    enemySpawnRadius: 5
+    obstacles: []
+    obstacleSpawnRate: 10
+    obstacleSpawnRadius: 8
 --- !u!114 &6772531644619706124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,6 +182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: {fileID: 0}
   creditsText: {fileID: 0}
+  tutorialArea: {fileID: 0}
   youWin_Text: {fileID: 0}
   youLose_Text: {fileID: 0}
   menu: {fileID: 0}

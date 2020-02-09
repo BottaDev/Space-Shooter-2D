@@ -154,8 +154,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 100
   speed: 0.1
-  rotationSpeed: 30
-  maxDistanceToDelete: 80
+  rotationSpeed: 10
+  maxDistanceToDelete: 50
   sprite: {fileID: 2683604287966487132}
   spriteAsteroid:
   - {fileID: 21300000, guid: d36d89dc94e35014e86c5cb6b050c9da, type: 3}

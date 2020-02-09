@@ -18,6 +18,8 @@ public class CustomizationController : MonoBehaviour
     public TextMeshProUGUI CreditsText;
     public TextMeshProUGUI adviseText;
     public TextMeshProUGUI equipedText;
+    public GameObject[] speedStats;
+    public GameObject[] ratioStats;
 
     // 1 = Hurricane
     // 2 = Confidence
@@ -164,6 +166,11 @@ public class CustomizationController : MonoBehaviour
                 spriteShip.sprite = ships[3];
 
             shipNameText.text = shipName[0];
+
+            HideStats();
+
+            speedStats[0].SetActive(true);
+            ratioStats[0].SetActive(true);
         }
         else if (currentShip == 1)
         {
@@ -177,6 +184,11 @@ public class CustomizationController : MonoBehaviour
                 spriteShip.sprite = ships[7];
 
             shipNameText.text = shipName[1];
+
+            HideStats();
+
+            speedStats[1].SetActive(true);
+            ratioStats[1].SetActive(true);
         }
         else if (currentShip == 2)
         {
@@ -190,6 +202,11 @@ public class CustomizationController : MonoBehaviour
                 spriteShip.sprite = ships[11];
 
             shipNameText.text = shipName[2];
+
+            HideStats();
+
+            speedStats[2].SetActive(true);
+            ratioStats[2].SetActive(true);
         }
     }
 
@@ -200,5 +217,14 @@ public class CustomizationController : MonoBehaviour
         equipedText.enabled = false;
 
         yield return null;
+    }
+
+    void HideStats()
+    {
+        foreach (GameObject go in speedStats)
+            go.SetActive(false);
+
+        foreach (GameObject go in ratioStats)
+            go.SetActive(false);
     }
 }

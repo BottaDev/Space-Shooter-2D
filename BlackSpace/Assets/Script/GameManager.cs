@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     float timeLeft;
     bool portalClosed;
     int currentCredits = 0;
+    bool gameFinished = false;
 
     // PLAYER PREFS
     int totalEnemyKills;
@@ -26,6 +27,7 @@ public class GameManager : MonoBehaviour
 
     UIManager uiManager;
     PowerUpDroppable pud;
+    DifficultyProgression dp;
 
     void Awake()
     {
@@ -36,6 +38,7 @@ public class GameManager : MonoBehaviour
 
         uiManager = GetComponent<UIManager>();
         pud = GetComponent<PowerUpDroppable>();
+        dp = GetComponent<DifficultyProgression>();
 
         uiManager.SetTimer(levelTime);
 
@@ -52,6 +55,9 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        if (gameFinished)
+            return;
+
         if (timeLeft > 0)
         {
             timeLeft -= Time.deltaTime;
@@ -77,6 +83,8 @@ public class GameManager : MonoBehaviour
         uiManager.ShowMenu(true);
         print("YOU WIN!");
 
+        gameFinished = true;
+
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         Destroy(player.gameObject);
 
@@ -88,6 +96,8 @@ public class GameManager : MonoBehaviour
     {
         uiManager.ShowMenu(false);
         print("YOU LOSE!");
+
+        gameFinished = true;
     }
 
     public void SetPortalClosed()
@@ -95,6 +105,8 @@ public class GameManager : MonoBehaviour
         portalClosed = true;
 
         timeLeft = levelTime;
+
+        dp.IncreaseDifficulty();
     }
 
     void SpawnPortal()

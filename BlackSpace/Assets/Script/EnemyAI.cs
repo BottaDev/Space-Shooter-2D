@@ -62,6 +62,11 @@ public class EnemyAI : MonoBehaviour
         if (player == null)
             return;
 
+        MoveEnemy();
+    }
+
+    void MoveEnemy()
+    {
         Vector3 direction = player.transform.position - transform.position;
         Vector2 newPos;
 
@@ -71,7 +76,7 @@ public class EnemyAI : MonoBehaviour
         {
             rb.rotation = Mathf.LerpAngle(rb.rotation, angle, turnSpeed);
 
-            newPos = CalculatePosition(direction);
+            newPos = CalculatePosition();
 
             rb.MovePosition(newPos);
         }
@@ -82,10 +87,10 @@ public class EnemyAI : MonoBehaviour
             rb.rotation = angle;
 
             if (distance > rotationDistance)
-                newPos = CalculatePosition(direction);
+                newPos = CalculatePosition();
             else
-                newPos = CalculatePositionShooting(direction);
-            
+                newPos = CalculatePositionShooting();
+
             if (currentShootRate < 0)
                 currentShootRate = 0;
 
@@ -106,10 +111,10 @@ public class EnemyAI : MonoBehaviour
                 currentSpawnRate = 0;
             else if (currentSpawnRate > 0)
                 currentSpawnRate -= Time.fixedDeltaTime;
-                
+
             if (distance > stopDistance)
             {
-                newPos = CalculatePosition(direction);
+                newPos = CalculatePosition();
 
                 rb.MovePosition(newPos);
             }
@@ -118,7 +123,7 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    Vector2 CalculatePosition(Vector2 direction)
+    Vector2 CalculatePosition()
     {
         Vector2 repelForce = Vector2.zero;
         foreach (Rigidbody2D enemy in EnemyRBs)
@@ -139,7 +144,7 @@ public class EnemyAI : MonoBehaviour
         return newPos;
     }
 
-    Vector2 CalculatePositionShooting(Vector2 direction)
+    Vector2 CalculatePositionShooting()
     {
         Vector2 repelForce = Vector2.zero;
         foreach (Rigidbody2D enemy in EnemyRBs)
@@ -157,7 +162,7 @@ public class EnemyAI : MonoBehaviour
         Vector2 newPos;
 
         if (goToRight)
-           newPos  = transform.position + transform.right * Time.fixedDeltaTime * shootingSpeed;
+            newPos = transform.position + transform.right * Time.fixedDeltaTime * shootingSpeed;
         else
             newPos = transform.position + transform.right * -1 * Time.fixedDeltaTime * shootingSpeed;
 

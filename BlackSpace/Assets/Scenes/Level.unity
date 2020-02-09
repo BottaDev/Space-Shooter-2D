@@ -2284,7 +2284,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.16016039, y: 0.05075125}
   m_AnchorMax: {x: 0.29900002, y: 0.4}
-  m_AnchoredPosition: {x: -0.28004456, y: -0.100004196}
+  m_AnchoredPosition: {x: -0.2800598, y: -0.1000061}
   m_SizeDelta: {x: -0.69000244, y: 1.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &972947769
@@ -2736,7 +2736,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.69600004, y: 0.21300001}
   m_AnchorMax: {x: 0.89300007, y: 0.66200006}
-  m_AnchoredPosition: {x: -0.29512, y: -0.099999905}
+  m_AnchoredPosition: {x: -0.29512024, y: -0.099998474}
   m_SizeDelta: {x: -0.58999634, y: 0.59000015}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1104716838
@@ -3530,7 +3530,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.026, y: 0.03827917}
   m_AnchorMax: {x: 0.16016039, y: 0.41252792}
-  m_AnchoredPosition: {x: -0.26004028, y: -0.100004196}
+  m_AnchoredPosition: {x: -0.26004028, y: -0.1000061}
   m_SizeDelta: {x: 0.30999756, y: -0.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1383557870
@@ -4039,7 +4039,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.16016039, y: 0.4}
   m_AnchorMax: {x: 0.29900002, y: 0.762}
-  m_AnchoredPosition: {x: -0.28004456, y: 0.24399471}
+  m_AnchoredPosition: {x: -0.2800598, y: 0.24399567}
   m_SizeDelta: {x: -0.69000244, y: 0.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1639340000
@@ -4113,7 +4113,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.12540098, y: 0.79936045}
   m_AnchorMax: {x: 0.3295401, y: 1}
-  m_AnchoredPosition: {x: 0.25299835, y: 0.41899872}
+  m_AnchoredPosition: {x: 0.25299072, y: 0.41899872}
   m_SizeDelta: {x: 0.47000122, y: -0.65999985}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1646779175
@@ -5022,7 +5022,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.36125, y: 0.6976614}
   m_AnchorMax: {x: 0.64000005, y: 0.8767731}
-  m_AnchoredPosition: {x: 0.0000076293945, y: 0.000015258789}
+  m_AnchoredPosition: {x: 0, y: 0.000030517578}
   m_SizeDelta: {x: 1.2200012, y: -0.45999908}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1871072577
@@ -5451,7 +5451,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.29900002, y: 0.05075125}
   m_AnchorMax: {x: 0.4325401, y: 0.4}
-  m_AnchoredPosition: {x: -0.30000305, y: -0.10000038}
+  m_AnchoredPosition: {x: -0.30000305, y: -0.099998474}
   m_SizeDelta: {x: 0.3100052, y: 1.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2010585777
@@ -5876,6 +5876,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1108660247417146753, guid: 5613f887a2296df439ad08d66431e88b,
+        type: 3}
+      propertyPath: levelTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108660247417146753, guid: 5613f887a2296df439ad08d66431e88b,
+        type: 3}
+      propertyPath: portalTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3236670099142967385, guid: 5613f887a2296df439ad08d66431e88b,
+        type: 3}
+      propertyPath: enemySpawnRate
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3236670099142967385, guid: 5613f887a2296df439ad08d66431e88b,
+        type: 3}
+      propertyPath: obstacleSpawnRate
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3236670099142967385, guid: 5613f887a2296df439ad08d66431e88b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6772531644619706124, guid: 5613f887a2296df439ad08d66431e88b,
         type: 3}
       propertyPath: timer
@@ -5911,26 +5936,6 @@ PrefabInstance:
       propertyPath: tutorialArea
       value: 
       objectReference: {fileID: 1866082523}
-    - target: {fileID: 3236670099142967385, guid: 5613f887a2296df439ad08d66431e88b,
-        type: 3}
-      propertyPath: enemySpawnRate
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3236670099142967385, guid: 5613f887a2296df439ad08d66431e88b,
-        type: 3}
-      propertyPath: obstacleSpawnRate
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 3236670099142967385, guid: 5613f887a2296df439ad08d66431e88b,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1108660247417146753, guid: 5613f887a2296df439ad08d66431e88b,
-        type: 3}
-      propertyPath: levelTime
-      value: 60
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5613f887a2296df439ad08d66431e88b, type: 3}
 --- !u!1001 &3794263051819535040

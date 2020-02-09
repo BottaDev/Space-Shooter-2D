@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aafac34263946d42aa959945cb211ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 5.5
   moveSmooth: 0.3
 --- !u!114 &2194034985151066329
 MonoBehaviour:
@@ -160,7 +160,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 2194034984840553803}
   bulletPrefab: {fileID: 5748591129016056024, guid: 32a15a45e837a7e4f993ee4bc32354b7,
     type: 3}
-  fireRate: 0.4
+  fireRate: 0.28
 --- !u!50 &2194034985151066335
 Rigidbody2D:
   serializedVersion: 4
