@@ -15,9 +15,11 @@ public class GameManager : MonoBehaviour
     public GameObject portalPrefab;
     public GameObject[] playerPrefab;
 
-    float timeLeft;
-    bool portalClosed;
     int currentCredits = 0;
+    float surviveTimeLeft;
+    float portalTimeLeft;
+    bool portalClosed = true;
+    bool surviveMode = true;
     bool gameFinished = false;
 
     // PLAYER PREFS
@@ -42,9 +44,8 @@ public class GameManager : MonoBehaviour
 
         uiManager.SetTimer(levelTime);
 
-        timeLeft = levelTime;
-
-        portalClosed = true;
+        surviveTimeLeft = levelTime;
+        portalTimeLeft = portalTime;
 
         totalEnemyKills = PlayerPrefs.GetInt("Credits");
         currentShip = PlayerPrefs.GetInt("PlayerShip");
@@ -57,20 +58,56 @@ public class GameManager : MonoBehaviour
     {
         if (gameFinished)
             return;
-
-        if (timeLeft > 0)
+        /*
+        if (surviveTimeLeft > 0)
         {
-            timeLeft -= Time.deltaTime;
+            surviveTimeLeft -= Time.deltaTime;
 
-            uiManager.SetTimer(timeLeft);
+            uiManager.SetTimer(surviveTimeLeft);
         }    
-        else if (timeLeft <= 0)
+        else if (surviveTimeLeft <= 0)
         {
-            timeLeft = 0;
-
+            surviveTimeLeft = 0;
+            uiManager.SetTimer(surviveTimeLeft);
             if (portalClosed)
                 SpawnPortal();
         }
+        */
+
+        if (surviveMode)
+        {
+            if (surviveTimeLeft > 0)
+            {
+                surviveTimeLeft -= Time.deltaTime;
+
+                uiManager.SetTimer(surviveTimeLeft);
+            }
+            else if (surviveTimeLeft <= 0)
+            {
+                surviveTimeLeft = 0;
+
+                uiManager.SetTimer(surviveTimeLeft);
+
+                if (portalClosed)
+                    SpawnPortal();
+            }
+        }
+        else
+        {
+            if (portalTimeLeft > 0)
+            {
+                portalTimeLeft -= Time.deltaTime;
+
+                uiManager.SetTimer(portalTimeLeft);
+            }
+            else if (portalTimeLeft <= 0)
+            {
+                portalTimeLeft = 0;
+
+                uiManager.SetTimer(portalTimeLeft);
+            }
+        }
+
     }
 
     public void DropPowerUp(Vector3 position)
@@ -103,8 +140,11 @@ public class GameManager : MonoBehaviour
     public void SetPortalClosed()
     {
         portalClosed = true;
+        surviveMode = true;
 
-        timeLeft = levelTime;
+        surviveTimeLeft = levelTime;
+
+        uiManager.SetSurviveText();
 
         dp.IncreaseDifficulty();
     }
@@ -112,6 +152,7 @@ public class GameManager : MonoBehaviour
     void SpawnPortal()
     {
         portalClosed = false;
+        surviveMode = false;
 
         GameObject player = GameObject.FindGameObjectWithTag("Player");
 
@@ -119,6 +160,10 @@ public class GameManager : MonoBehaviour
         spawnPos += Random.insideUnitCircle.normalized * portalDistance;
 
         Instantiate(portalPrefab, spawnPos, Quaternion.identity);
+
+        portalTimeLeft = portalTime;
+
+        uiManager.SetEscapeText();
     }
 
     void SpawnPlayer()

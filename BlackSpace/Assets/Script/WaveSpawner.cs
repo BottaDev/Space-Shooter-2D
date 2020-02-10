@@ -6,19 +6,6 @@ public class WaveSpawner : MonoBehaviour
 {
 	public Wave currentWave;
 
-	/*
-	[Header("Enemies")]
-	public GameObject[] enemyPrefab;
-	public float enemySpawnRate = 5f;
-	public float enemySpawnRadius = 5f;
-	float currentEnemyTime;
-
-	[Header("Obstacles")]
-	public GameObject[] obstaclePrefab;
-	public float obstacleSpawnRate = 10f;
-	public float obstacleSpawnRadius = 8f;
-	float currentObstacleTime;
-	*/
 	GameObject player;
 	float nextEnemySpawnTime = 1f;
 	float nextObstacleSpawnTime = 1f;
@@ -26,9 +13,6 @@ public class WaveSpawner : MonoBehaviour
 	void Start()
 	{
 		player = GameObject.FindGameObjectWithTag("Player");
-
-		//currentEnemyTime = 0;
-		//currentObstacleTime = 0;
 	}
 
 	void Update()

@@ -84,13 +84,13 @@ MonoBehaviour:
         type: 3}
       spawnChance: 1
     enemySpawnRate: 1
-    enemySpawnRadius: 16
+    enemySpawnRadius: 20
     obstacles:
     - obstaclePrefab: {fileID: 4768096441635552723, guid: f45d1d7715e6ca44b9559a2f8d3c60e7,
         type: 3}
       spawnChance: 0.5
-    obstacleSpawnRate: 10
-    obstacleSpawnRadius: 20
+    obstacleSpawnRate: 0.4
+    obstacleSpawnRadius: 22
   - enemies:
     - enemyPrefab: {fileID: 2254144746426137979, guid: fe194c5f584e7ca4aba48fe464d866a7,
         type: 3}
@@ -104,8 +104,8 @@ MonoBehaviour:
     - obstaclePrefab: {fileID: 4768096441635552723, guid: b2e2c87411dc3df4b9f91ac4893fd50c,
         type: 3}
       spawnChance: 0.5
-    obstacleSpawnRate: 12
-    obstacleSpawnRadius: 10
+    obstacleSpawnRate: 0.8
+    obstacleSpawnRadius: 24
   - enemies:
     - enemyPrefab: {fileID: 2254144746426137979, guid: fe194c5f584e7ca4aba48fe464d866a7,
         type: 3}
@@ -122,8 +122,8 @@ MonoBehaviour:
     - obstaclePrefab: {fileID: 4768096441635552723, guid: b2e2c87411dc3df4b9f91ac4893fd50c,
         type: 3}
       spawnChance: 0.5
-    obstacleSpawnRate: 15
-    obstacleSpawnRadius: 12
+    obstacleSpawnRate: 1.25
+    obstacleSpawnRadius: 26
   - enemies:
     - enemyPrefab: {fileID: 2254144746426137979, guid: fe194c5f584e7ca4aba48fe464d866a7,
         type: 3}
@@ -146,7 +146,7 @@ MonoBehaviour:
     - obstaclePrefab: {fileID: 8086552942952432579, guid: 9988862152853d843994b0e38df5163e,
         type: 3}
       spawnChance: 0.3
-    obstacleSpawnRate: 18
+    obstacleSpawnRate: 1.8
     obstacleSpawnRadius: 28
   waveSpawner: {fileID: 3236670099142967385}
 --- !u!114 &3236670099142967385

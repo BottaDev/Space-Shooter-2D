@@ -1029,7 +1029,7 @@ RectTransform:
   - {fileID: 806530804}
   - {fileID: 856283853}
   m_Father: {fileID: 823504784}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1540,8 +1540,8 @@ RectTransform:
   m_Children:
   - {fileID: 18551505}
   - {fileID: 1243327548}
-  - {fileID: 554321993}
   - {fileID: 1866082524}
+  - {fileID: 554321993}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3530,7 +3530,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.026, y: 0.03827917}
   m_AnchorMax: {x: 0.16016039, y: 0.41252792}
-  m_AnchoredPosition: {x: -0.26004028, y: -0.1000061}
+  m_AnchoredPosition: {x: -0.2600708, y: -0.1000061}
   m_SizeDelta: {x: 0.30999756, y: -0.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1383557870
@@ -4677,7 +4677,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_textAlignment: 1026
+  m_textAlignment: 514
   m_isAlignmentEnumConverted: 1
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -5018,7 +5018,7 @@ RectTransform:
   - {fileID: 1646779174}
   - {fileID: 2032515279}
   m_Father: {fileID: 823504784}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.36125, y: 0.6976614}
   m_AnchorMax: {x: 0.64000005, y: 0.8767731}
@@ -5451,7 +5451,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.29900002, y: 0.05075125}
   m_AnchorMax: {x: 0.4325401, y: 0.4}
-  m_AnchoredPosition: {x: -0.30000305, y: -0.099998474}
+  m_AnchoredPosition: {x: -0.30000305, y: -0.1000061}
   m_SizeDelta: {x: 0.3100052, y: 1.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2010585777
@@ -5879,12 +5879,12 @@ PrefabInstance:
     - target: {fileID: 1108660247417146753, guid: 5613f887a2296df439ad08d66431e88b,
         type: 3}
       propertyPath: levelTime
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1108660247417146753, guid: 5613f887a2296df439ad08d66431e88b,
         type: 3}
       propertyPath: portalTime
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3236670099142967385, guid: 5613f887a2296df439ad08d66431e88b,
         type: 3}
@@ -5936,6 +5936,16 @@ PrefabInstance:
       propertyPath: tutorialArea
       value: 
       objectReference: {fileID: 1866082523}
+    - target: {fileID: 6772531644619706124, guid: 5613f887a2296df439ad08d66431e88b,
+        type: 3}
+      propertyPath: escape_Text
+      value: 
+      objectReference: {fileID: 1423639864}
+    - target: {fileID: 6772531644619706124, guid: 5613f887a2296df439ad08d66431e88b,
+        type: 3}
+      propertyPath: survive_Text
+      value: 
+      objectReference: {fileID: 1022517931}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5613f887a2296df439ad08d66431e88b, type: 3}
 --- !u!1001 &3794263051819535040

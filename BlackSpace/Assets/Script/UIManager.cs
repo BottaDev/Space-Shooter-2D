@@ -10,6 +10,8 @@ public class UIManager : MonoBehaviour
     public GameObject tutorialArea;
     public GameObject youWin_Text;
     public GameObject youLose_Text;
+    public GameObject survive_Text;
+    public GameObject escape_Text;
     public GameObject menu;
 
     void Start()
@@ -41,6 +43,18 @@ public class UIManager : MonoBehaviour
             youWin_Text.SetActive(false);
             youLose_Text.SetActive(true);
         }  
+    }
+
+    public void SetSurviveText()
+    {
+        survive_Text.SetActive(true);
+        escape_Text.SetActive(false); 
+}
+
+    public void SetEscapeText()
+    {
+        survive_Text.SetActive(false);
+        escape_Text.SetActive(true);
     }
 
     public IEnumerator DisableTutorial()

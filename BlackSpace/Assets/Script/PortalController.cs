@@ -16,6 +16,8 @@ public class PortalController : MonoBehaviour
         currentTime = timeToClose;
 
         portalClosed = false;
+
+        print("PORTAL SPAWNED");
     }
 
     void Update()

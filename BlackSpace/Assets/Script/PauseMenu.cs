@@ -16,6 +16,12 @@ public class PauseMenu : MonoBehaviour
         Cursor.SetCursor(crossHairCursorTexture, cursorHotspot, CursorMode.Auto);
     }
 
+    void Start()
+    {
+        Time.timeScale = 1;
+        GameIsPaused = false;
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -24,7 +30,6 @@ public class PauseMenu : MonoBehaviour
                 Resume();
             else
                 Pause();
-
         }    
     }
 
@@ -48,6 +53,4 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0;
         GameIsPaused = true;
     }
-
-
 }
