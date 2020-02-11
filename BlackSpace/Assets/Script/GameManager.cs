@@ -58,21 +58,6 @@ public class GameManager : MonoBehaviour
     {
         if (gameFinished)
             return;
-        /*
-        if (surviveTimeLeft > 0)
-        {
-            surviveTimeLeft -= Time.deltaTime;
-
-            uiManager.SetTimer(surviveTimeLeft);
-        }    
-        else if (surviveTimeLeft <= 0)
-        {
-            surviveTimeLeft = 0;
-            uiManager.SetTimer(surviveTimeLeft);
-            if (portalClosed)
-                SpawnPortal();
-        }
-        */
 
         if (surviveMode)
         {
@@ -125,7 +110,7 @@ public class GameManager : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         Destroy(player.gameObject);
 
-        PlayerPrefs.SetInt("EnemyKills", totalEnemyKills + currentCredits);
+        PlayerPrefs.SetInt("Credits", totalEnemyKills + currentCredits);
         PlayerPrefs.Save();
     }
 

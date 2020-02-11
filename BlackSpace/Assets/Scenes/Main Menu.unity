@@ -2682,7 +2682,7 @@ MonoBehaviour:
   spriteShip: {fileID: 1165589096}
   colorText: {fileID: 1912519734}
   shipNameText: {fileID: 1112246917}
-  CreditsText: {fileID: 781055913}
+  creditsText: {fileID: 758869020}
   adviseText: {fileID: 781055913}
   equipedText: {fileID: 383849221}
   speedStats:
@@ -2695,6 +2695,7 @@ MonoBehaviour:
   - {fileID: 1472223158}
   currentShip: 0
   currentShipColor: 0
+  totalCredits: 0
 --- !u!1 &667064604
 GameObject:
   m_ObjectHideFlags: 0
@@ -3092,7 +3093,7 @@ GameObject:
   - component: {fileID: 758869021}
   - component: {fileID: 758869020}
   m_Layer: 5
-  m_Name: CreditsCount
+  m_Name: CreditsCount_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7201,7 +7202,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'Version: 0.22'
+  m_text: 'Version: 0.23'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7a7ae491882b12c4180657df963335ee, type: 2}
   m_sharedMaterial: {fileID: 21359168079212026, guid: 7a7ae491882b12c4180657df963335ee,

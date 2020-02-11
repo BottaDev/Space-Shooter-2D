@@ -116,7 +116,7 @@ MonoBehaviour:
   repelForce: 3
   repelRange: 1
   shootDistance: 8
-  rotationDistance: 10
+  rotationDistance: 8
   shootingSpeed: 2.5
   bulletPrefab: {fileID: 5748591129016056024, guid: acaf8956f68b7a54591a94f4719d0982,
     type: 3}

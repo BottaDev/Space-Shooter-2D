@@ -1069,7 +1069,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.39625, y: 0.31355023}
   m_AnchorMax: {x: 0.61749995, y: 0.6491243}
-  m_AnchoredPosition: {x: 2.5192947, y: 39.752655}
+  m_AnchoredPosition: {x: 2.519287, y: 39.752655}
   m_SizeDelta: {x: 105.9595, y: 44.717636}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &688768522
@@ -2736,7 +2736,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.69600004, y: 0.21300001}
   m_AnchorMax: {x: 0.89300007, y: 0.66200006}
-  m_AnchoredPosition: {x: -0.29512024, y: -0.099998474}
+  m_AnchoredPosition: {x: -0.29510498, y: -0.099998474}
   m_SizeDelta: {x: -0.58999634, y: 0.59000015}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1104716838
@@ -4113,7 +4113,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.12540098, y: 0.79936045}
   m_AnchorMax: {x: 0.3295401, y: 1}
-  m_AnchoredPosition: {x: 0.25299072, y: 0.41899872}
+  m_AnchoredPosition: {x: 0.25299072, y: 0.41900635}
   m_SizeDelta: {x: 0.47000122, y: -0.65999985}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1646779175
@@ -5022,7 +5022,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.36125, y: 0.6976614}
   m_AnchorMax: {x: 0.64000005, y: 0.8767731}
-  m_AnchoredPosition: {x: 0, y: 0.000030517578}
+  m_AnchoredPosition: {x: 0, y: 0.000061035156}
   m_SizeDelta: {x: 1.2200012, y: -0.45999908}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1871072577
@@ -5525,7 +5525,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.68700004, y: 0.79936045}
   m_AnchorMax: {x: 0.90200007, y: 1}
-  m_AnchoredPosition: {x: 0.25, y: 0.41899872}
+  m_AnchoredPosition: {x: 0.25, y: 0.41900635}
   m_SizeDelta: {x: 0.34000015, y: -0.65999985}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2032515280
@@ -5876,16 +5876,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1108660247417146753, guid: 5613f887a2296df439ad08d66431e88b,
-        type: 3}
-      propertyPath: levelTime
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1108660247417146753, guid: 5613f887a2296df439ad08d66431e88b,
-        type: 3}
-      propertyPath: portalTime
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 3236670099142967385, guid: 5613f887a2296df439ad08d66431e88b,
         type: 3}
       propertyPath: enemySpawnRate
@@ -5899,7 +5889,7 @@ PrefabInstance:
     - target: {fileID: 3236670099142967385, guid: 5613f887a2296df439ad08d66431e88b,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6772531644619706124, guid: 5613f887a2296df439ad08d66431e88b,
         type: 3}

@@ -47,8 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6325c1354dbc71d4ca0b389114e0499f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelTime: 60
-  portalTime: 30
+  levelTime: 75
+  portalTime: 35
   portalDistance: 200
   portalPrefab: {fileID: 1301744629049019902, guid: 68ae2e795195dd64b8028795c9192ea1,
     type: 3}
@@ -113,6 +113,9 @@ MonoBehaviour:
     - enemyPrefab: {fileID: 2254144746426137979, guid: 83c947d9d5b297f4cb88feb324aac643,
         type: 3}
       spawnChance: 0.7
+    - enemyPrefab: {fileID: 2254144746426137979, guid: aed18e07e0e829149a48cbbfb71fa86b,
+        type: 3}
+      spawnChance: 0.2
     enemySpawnRate: 1.85
     enemySpawnRadius: 20
     obstacles:
@@ -133,7 +136,13 @@ MonoBehaviour:
       spawnChance: 0.7
     - enemyPrefab: {fileID: 2254144746426137979, guid: 6ff5f57de7a66af47a735794079cb5cd,
         type: 3}
-      spawnChance: 0.4
+      spawnChance: 0.25
+    - enemyPrefab: {fileID: 2254144746426137979, guid: aed18e07e0e829149a48cbbfb71fa86b,
+        type: 3}
+      spawnChance: 0.2
+    - enemyPrefab: {fileID: 2254144746426137979, guid: c6742e31dc6528947882818dc58aa6d0,
+        type: 3}
+      spawnChance: 0.15
     enemySpawnRate: 2.2
     enemySpawnRadius: 22
     obstacles:
@@ -185,6 +194,8 @@ MonoBehaviour:
   tutorialArea: {fileID: 0}
   youWin_Text: {fileID: 0}
   youLose_Text: {fileID: 0}
+  survive_Text: {fileID: 0}
+  escape_Text: {fileID: 0}
   menu: {fileID: 0}
 --- !u!114 &3221108339966060228
 MonoBehaviour:

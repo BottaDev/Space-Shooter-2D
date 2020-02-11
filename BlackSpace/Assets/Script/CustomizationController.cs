@@ -15,7 +15,7 @@ public class CustomizationController : MonoBehaviour
     public Image spriteShip;
     public TextMeshProUGUI colorText;
     public TextMeshProUGUI shipNameText;
-    public TextMeshProUGUI CreditsText;
+    public TextMeshProUGUI creditsText;
     public TextMeshProUGUI adviseText;
     public TextMeshProUGUI equipedText;
     public GameObject[] speedStats;
@@ -34,7 +34,7 @@ public class CustomizationController : MonoBehaviour
     [Range(min: 0, max: 3)]
     public int currentShipColor = 0;
 
-    int totalCredits = 0;
+    public int totalCredits = 0;
 
     void Awake()
     {
@@ -42,7 +42,7 @@ public class CustomizationController : MonoBehaviour
         currentShip = PlayerPrefs.GetInt("PlayerShip");
         currentShipColor = PlayerPrefs.GetInt("ShipColor");
 
-        CreditsText.text = totalCredits.ToString();
+        creditsText.text = totalCredits.ToString();
         adviseText.enabled = false;
 
         ChangeColor(0);
