@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public float portalDistance = 200f;
 
     [Header("Prefabs")]
+    public Pointer pointer;
     public GameObject portalPrefab;
     public GameObject[] playerPrefab;
 
@@ -132,6 +133,8 @@ public class GameManager : MonoBehaviour
         uiManager.SetSurviveText();
 
         dp.IncreaseDifficulty();
+
+        pointer.Hide();
     }
 
     void SpawnPortal()
@@ -149,6 +152,8 @@ public class GameManager : MonoBehaviour
         portalTimeLeft = portalTime;
 
         uiManager.SetEscapeText();
+
+        pointer.Show(spawnPos);
     }
 
     void SpawnPlayer()

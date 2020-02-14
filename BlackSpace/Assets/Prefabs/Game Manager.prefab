@@ -49,7 +49,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelTime: 75
   portalTime: 35
-  portalDistance: 200
+  portalDistance: 160
+  pointer: {fileID: 0}
   portalPrefab: {fileID: 1301744629049019902, guid: 68ae2e795195dd64b8028795c9192ea1,
     type: 3}
   playerPrefab:

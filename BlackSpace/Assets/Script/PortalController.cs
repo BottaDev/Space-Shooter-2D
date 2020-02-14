@@ -39,6 +39,7 @@ public class PortalController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        print("Entro");
         if (collision.gameObject.layer == 11)
             GameManager.instance.WinGame();
     }
