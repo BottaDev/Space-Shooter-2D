@@ -15,17 +15,16 @@ public class Player : MonoBehaviour
     float rateBuffDuration;
     float defaultSpeed;
     float defaultRate;
+
     
     PlayerShoot playerShoot;
     PlayerController playerController;
-    Animator anim;
     Rigidbody2D rb;
 
     void Awake()
     {
         playerShoot = GetComponent<PlayerShoot>();
         playerController = GetComponent<PlayerController>();
-        anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
 
         defaultRate = playerShoot.fireRate;
@@ -36,6 +35,7 @@ public class Player : MonoBehaviour
     {
         CheckPowerUps();
 
+        // Animacion y sonido del motor
         if (rb.velocity != Vector2.zero)
             engineRenderer.enabled = true;
         else
@@ -123,11 +123,5 @@ public class Player : MonoBehaviour
             
             SetPowerUp(puc.powerType.ToString(), puc.buff, puc.duration, collision.gameObject);
         }
-    }
-
-     void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.layer == 12)
-            KillPlayer();
     }
 }

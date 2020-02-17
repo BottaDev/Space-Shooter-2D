@@ -6,6 +6,14 @@ public class Enemy : MonoBehaviour
 {
     public EnemyType enemyType;
     public int hp = 2;
+    
+    AudioSource audioSource;
+
+    void Awake()
+    {
+        if (enemyType == EnemyType.Shooter)
+            audioSource = GetComponent<AudioSource>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -46,6 +54,11 @@ public class Enemy : MonoBehaviour
             GameManager.instance.AddCredits(2);
         else if (enemyType == EnemyType.Spawner)
             GameManager.instance.AddCredits(3);
+    }
+
+    public void ReproduceSound()
+    {
+        audioSource.Play();
     }
 
     public enum EnemyType

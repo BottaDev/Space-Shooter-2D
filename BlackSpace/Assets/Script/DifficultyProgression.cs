@@ -16,7 +16,6 @@ public class DifficultyProgression : MonoBehaviour
 
 	public void IncreaseDifficulty()
 	{
-
 		difficulty += 1;
 
 		if (difficulty > 4)

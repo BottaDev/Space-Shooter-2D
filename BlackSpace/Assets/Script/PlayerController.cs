@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
 	Rigidbody2D rb;
 	Vector2 moveInput;
 	Vector2 velocity = Vector2.zero;
-
+	
 	void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();

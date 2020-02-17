@@ -28,7 +28,7 @@ public class EnemyAI : MonoBehaviour
 
     // GENERAL
     static List<Rigidbody2D> EnemyRBs;
-    Enemy enemyStats;
+    Enemy enemy;
     Rigidbody2D rb;
     GameObject player;
 
@@ -36,7 +36,7 @@ public class EnemyAI : MonoBehaviour
     {
         rb = this.GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
-        enemyStats = gameObject.GetComponent<Enemy>();
+        enemy = gameObject.GetComponent<Enemy>();
 
         if (EnemyRBs == null)
             EnemyRBs = new List<Rigidbody2D>();
@@ -44,7 +44,7 @@ public class EnemyAI : MonoBehaviour
         EnemyRBs.Add(rb);
 
         
-        if(enemyStats.enemyType == Enemy.EnemyType.Shooter)
+        if(enemy.enemyType == Enemy.EnemyType.Shooter)
         {
             // Direccion de giro al disparar
             goToRight = Random.Range(0, 2) == 0 ? true : false;
@@ -53,7 +53,7 @@ public class EnemyAI : MonoBehaviour
         }
 
 
-        if (enemyStats.enemyType == Enemy.EnemyType.Spawner)
+        if (enemy.enemyType == Enemy.EnemyType.Spawner)
             currentSpawnRate = spawnRate;
     }
 
@@ -72,7 +72,7 @@ public class EnemyAI : MonoBehaviour
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
 
-        if (enemyStats.enemyType == Enemy.EnemyType.Suicide)
+        if (enemy.enemyType == Enemy.EnemyType.Suicide)
         {
             rb.rotation = Mathf.LerpAngle(rb.rotation, angle, turnSpeed);
 
@@ -80,7 +80,7 @@ public class EnemyAI : MonoBehaviour
 
             rb.MovePosition(newPos);
         }
-        else if (enemyStats.enemyType == Enemy.EnemyType.Shooter)
+        else if (enemy.enemyType == Enemy.EnemyType.Shooter)
         {
             float distance = Vector2.Distance(rb.position, player.transform.position);
 
@@ -101,7 +101,7 @@ public class EnemyAI : MonoBehaviour
 
             rb.MovePosition(newPos);
         }
-        else if (enemyStats.enemyType == Enemy.EnemyType.Spawner)
+        else if (enemy.enemyType == Enemy.EnemyType.Spawner)
         {
             float distance = Vector2.Distance(rb.position, player.transform.position);
 
@@ -174,6 +174,7 @@ public class EnemyAI : MonoBehaviour
     void Shoot()
     {
         Instantiate(bulletPrefab, spawnPoint.position, spawnPoint.rotation);
+        enemy.ReproduceSound();
 
         currentShootRate = fireRate;
     }

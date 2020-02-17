@@ -5,14 +5,22 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
+    [Header("In Game")]
     public TextMeshProUGUI timer;
     public TextMeshProUGUI creditsText;
-    public GameObject tutorialArea;
-    public GameObject youWin_Text;
-    public GameObject youLose_Text;
     public GameObject survive_Text;
     public GameObject escape_Text;
-    public GameObject menu;
+
+    [Header("Areas")]
+    public GameObject tutorialArea;
+    public GameObject menuArea;
+
+    [Header("Texts")]
+    public GameObject youWin_Text;
+    public GameObject youLose_Text;
+    public TextMeshProUGUI timePlayed_Text;
+    public TextMeshProUGUI kills_Text;
+    public TextMeshProUGUI wavesSurvived_Text;
 
     void Start()
     {
@@ -29,9 +37,9 @@ public class UIManager : MonoBehaviour
         creditsText.text = "" + credits.ToString("0000");
     }
 
-    public void ShowMenu(bool playerWin)
+    public void ShowMenu(bool playerWin, float timePlayed, int kills, int waves)
     {
-        menu.SetActive(true);
+        menuArea.SetActive(true);
 
         if (playerWin)
         {
@@ -42,7 +50,11 @@ public class UIManager : MonoBehaviour
         {
             youWin_Text.SetActive(false);
             youLose_Text.SetActive(true);
-        }  
+        }
+
+        timePlayed_Text.text = timePlayed.ToString("F2");
+        kills_Text.text = kills.ToString();
+        wavesSurvived_Text.text = waves.ToString();
     }
 
     public void SetSurviveText()

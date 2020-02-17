@@ -10,6 +10,12 @@ public class PlayerShoot : MonoBehaviour
     public float fireRate = 0.5f;
 
     float currentRate = 0;
+    AudioSource audioSource;
+
+    void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     void Update()
     {
@@ -25,6 +31,8 @@ public class PlayerShoot : MonoBehaviour
     void Shoot()
     {
         Instantiate(bulletPrefab, spawnPoint.position, spawnPoint.rotation);
+
+        audioSource.Play();
 
         currentRate = fireRate;
     }

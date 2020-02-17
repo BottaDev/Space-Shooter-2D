@@ -17,7 +17,8 @@ public class SettingsMenu : MonoBehaviour
 
     void Start()
     {
-        GetResolutions();
+        /*
+       /GetResolutions();
 
         GetFullScreenMode();
 
@@ -27,6 +28,7 @@ public class SettingsMenu : MonoBehaviour
         int savedHeight = PlayerPrefs.GetInt("ScreenHeight");
 
         Screen.SetResolution(savedWidth, savedHeight, Screen.fullScreen);
+        */
     }
 
     void GetFullScreenMode()

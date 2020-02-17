@@ -210,6 +210,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1f15ce65cbdbe04698f5c25cdf87166, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rateChance: 0.3
+  speedChance: 0.1
   ratePowerUps:
   - {fileID: 1212386207574975958, guid: ecd2888e47479b24dada7678fe5bcb37, type: 3}
   - {fileID: 1212386207574975958, guid: 13c82cab90ee335448fb7b46a45624c5, type: 3}

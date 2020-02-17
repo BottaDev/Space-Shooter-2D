@@ -146,7 +146,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.101, y: 0.36400002}
   m_AnchorMax: {x: 0.4633901, y: 0.52400005}
-  m_AnchoredPosition: {x: -0.039993286, y: 0.20000076}
+  m_AnchoredPosition: {x: -0.039993286, y: 0.19999695}
   m_SizeDelta: {x: -0.09000015, y: 0.98999786}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &51794910
@@ -3214,7 +3214,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.12851992, y: 0.1774804}
   m_AnchorMax: {x: 0.874, y: 0.25159216}
-  m_AnchoredPosition: {x: 0, y: 0.80000305}
+  m_AnchoredPosition: {x: 0, y: 0.7999878}
   m_SizeDelta: {x: 0.7299957, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &706136959
@@ -3773,7 +3773,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.054255318, y: 0.20010808}
   m_AnchorMax: {x: 0.94900006, y: 0.30447745}
-  m_AnchoredPosition: {x: 0, y: 0.1000061}
+  m_AnchoredPosition: {x: 0, y: 0.099975586}
   m_SizeDelta: {x: 0.23000336, y: -0.02999878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &781055913
@@ -3936,7 +3936,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.35624272, y: 0.087000005}
   m_AnchorMax: {x: 0.6402721, y: 0.19000001}
-  m_AnchoredPosition: {x: 0.29000092, y: -0.7000122}
+  m_AnchoredPosition: {x: 0.29000854, y: -0.7000122}
   m_SizeDelta: {x: -1.8560028, y: -1.007}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &862995664
@@ -5158,7 +5158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.416, y: 0.25159216}
   m_AnchorMax: {x: 0.58351994, y: 0.39600003}
-  m_AnchoredPosition: {x: 0.06896973, y: 0.40000153}
+  m_AnchoredPosition: {x: 0.06896973, y: 0.3999939}
   m_SizeDelta: {x: 1, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1251721716
@@ -7572,7 +7572,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'Version: 0.25'
+  m_text: 'Version: 0.26'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7a7ae491882b12c4180657df963335ee, type: 2}
   m_sharedMaterial: {fileID: 21359168079212026, guid: 7a7ae491882b12c4180657df963335ee,
@@ -8739,7 +8739,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.32000002, y: 0.20022085}
   m_AnchorMax: {x: 0.67875, y: 0.7995457}
-  m_AnchoredPosition: {x: 0.5, y: -0.000015258789}
+  m_AnchoredPosition: {x: 0.5, y: 0}
   m_SizeDelta: {x: 0.3499756, y: 0.1499939}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2024891101

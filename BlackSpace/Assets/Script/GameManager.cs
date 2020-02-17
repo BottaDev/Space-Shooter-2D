@@ -23,6 +23,11 @@ public class GameManager : MonoBehaviour
     bool surviveMode = true;
     bool gameFinished = false;
 
+    // STATISTICS
+    float totalSurvivedTime = 0;
+    int kills = 0;
+    int totalWavesPlayed = 0;
+
     // PLAYER PREFS
     int totalEnemyKills;
     int currentShip = 0;
@@ -31,6 +36,7 @@ public class GameManager : MonoBehaviour
     UIManager uiManager;
     PowerUpDroppable pud;
     DifficultyProgression dp;
+    GameObject player;
 
     void Awake()
     {
@@ -52,7 +58,7 @@ public class GameManager : MonoBehaviour
         currentShip = PlayerPrefs.GetInt("PlayerShip");
         currentShipColor = PlayerPrefs.GetInt("ShipColor");
 
-        SpawnPlayer();
+        player = SpawnPlayer();
     }
 
     void Update()
@@ -94,6 +100,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        totalSurvivedTime += Time.deltaTime;
     }
 
     public void DropPowerUp(Vector3 position)
@@ -103,12 +110,11 @@ public class GameManager : MonoBehaviour
 
     public void WinGame()
     {
-        uiManager.ShowMenu(true);
+        uiManager.ShowMenu(true, totalSurvivedTime, kills, totalWavesPlayed);
         print("YOU WIN!");
 
         gameFinished = true;
 
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
         Destroy(player.gameObject);
 
         PlayerPrefs.SetInt("Credits", totalEnemyKills + currentCredits);
@@ -117,7 +123,7 @@ public class GameManager : MonoBehaviour
 
     public void LoseGame()
     {
-        uiManager.ShowMenu(false);
+        uiManager.ShowMenu(false, totalSurvivedTime, kills, totalWavesPlayed);
         print("YOU LOSE!");
 
         gameFinished = true;
@@ -135,14 +141,14 @@ public class GameManager : MonoBehaviour
         dp.IncreaseDifficulty();
 
         pointer.Hide();
+
+        totalWavesPlayed++;
     }
 
     void SpawnPortal()
     {
         portalClosed = false;
         surviveMode = false;
-
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
 
         Vector2 spawnPos = player.transform.position;
         spawnPos += Random.insideUnitCircle.normalized * portalDistance;
@@ -156,46 +162,50 @@ public class GameManager : MonoBehaviour
         pointer.Show(spawnPos);
     }
 
-    void SpawnPlayer()
+    GameObject SpawnPlayer()
     {
         if (currentShip == 0)
         {
             if (currentShipColor == 0)
-                Instantiate(playerPrefab[0], new Vector3(0, 0, 0), Quaternion.identity);
+                return Instantiate(playerPrefab[0], new Vector3(0, 0, 0), Quaternion.identity);
             else if (currentShipColor == 1)
-                Instantiate(playerPrefab[1], new Vector3(0, 0, 0), Quaternion.identity);
+                return Instantiate(playerPrefab[1], new Vector3(0, 0, 0), Quaternion.identity);
             else if (currentShipColor == 2)
-                Instantiate(playerPrefab[2], new Vector3(0, 0, 0), Quaternion.identity);
+                return Instantiate(playerPrefab[2], new Vector3(0, 0, 0), Quaternion.identity);
             else if (currentShipColor == 3)
-                Instantiate(playerPrefab[3], new Vector3(0, 0, 0), Quaternion.identity);
+                return Instantiate(playerPrefab[3], new Vector3(0, 0, 0), Quaternion.identity);
         }
         else if (currentShip == 1)
         {
             if (currentShipColor == 0)
-                Instantiate(playerPrefab[4], new Vector3(0, 0, 0), Quaternion.identity);
+                return Instantiate(playerPrefab[4], new Vector3(0, 0, 0), Quaternion.identity);
             else if (currentShipColor == 1)
-                Instantiate(playerPrefab[5], new Vector3(0, 0, 0), Quaternion.identity);
+                return Instantiate(playerPrefab[5], new Vector3(0, 0, 0), Quaternion.identity);
             else if (currentShipColor == 2)
-                Instantiate(playerPrefab[6], new Vector3(0, 0, 0), Quaternion.identity);
+                return Instantiate(playerPrefab[6], new Vector3(0, 0, 0), Quaternion.identity);
             else if (currentShipColor == 3)
-                Instantiate(playerPrefab[7], new Vector3(0, 0, 0), Quaternion.identity);
+                return Instantiate(playerPrefab[7], new Vector3(0, 0, 0), Quaternion.identity);
         }
         else if (currentShip == 2)
         {
             if (currentShipColor == 0)
-                Instantiate(playerPrefab[8], new Vector3(0, 0, 0), Quaternion.identity);
+                return Instantiate(playerPrefab[8], new Vector3(0, 0, 0), Quaternion.identity);
             else if (currentShipColor == 7)
-                Instantiate(playerPrefab[9], new Vector3(0, 0, 0), Quaternion.identity);
+                return Instantiate(playerPrefab[9], new Vector3(0, 0, 0), Quaternion.identity);
             else if (currentShipColor == 8)
-                Instantiate(playerPrefab[10], new Vector3(0, 0, 0), Quaternion.identity);
+                return Instantiate(playerPrefab[10], new Vector3(0, 0, 0), Quaternion.identity);
             else if (currentShipColor == 3)
-                Instantiate(playerPrefab[11], new Vector3(0, 0, 0), Quaternion.identity);
+                return Instantiate(playerPrefab[11], new Vector3(0, 0, 0), Quaternion.identity);
         }
+
+        return null;
     }
 
     public void AddCredits(int credits)
     {
         currentCredits += credits;
+
+        kills++;
 
         uiManager.SetCredits(currentCredits);
     }
