@@ -10,6 +10,9 @@ public class PauseMenu : MonoBehaviour
     public Texture2D crossHairCursorTexture;
     public Texture2D pointerCursorTexture;
 
+    PlayerController playerController;
+    PlayerShoot playerShoot;
+
     void Awake()
     {
         Vector2 cursorHotspot = new Vector2(crossHairCursorTexture.width / 2, crossHairCursorTexture.height / 2);
@@ -20,6 +23,10 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1;
         GameIsPaused = false;
+
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        playerController = player.GetComponent<PlayerController>();
+        playerShoot = player.GetComponent<PlayerShoot>();
     }
 
     void Update()
@@ -42,6 +49,9 @@ public class PauseMenu : MonoBehaviour
 
         Time.timeScale = 1;
         GameIsPaused = false;
+
+        playerController.enabled = true;
+        playerShoot.enabled = true;
     }
 
     void Pause()
@@ -52,5 +62,8 @@ public class PauseMenu : MonoBehaviour
 
         Time.timeScale = 0;
         GameIsPaused = true;
+
+        playerController.enabled = false;
+        playerShoot.enabled = false;
     }
 }

@@ -3585,7 +3585,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1304197072}
   m_OnClick:
     m_PersistentCalls:
@@ -5228,7 +5228,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 3539992575
-  m_fontColor: {r: 1, g: 1, b: 1, a: 0.8235294}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0.19607843}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5295,7 +5295,7 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
