@@ -9,6 +9,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuUi;
     public Texture2D crossHairCursorTexture;
     public Texture2D pointerCursorTexture;
+    public MusicController musicController;
 
     PlayerController playerController;
     PlayerShoot playerShoot;
@@ -52,6 +53,8 @@ public class PauseMenu : MonoBehaviour
 
         playerController.enabled = true;
         playerShoot.enabled = true;
+
+        musicController.ModifyMusicVolume(musicController.normalSoundLevel);
     }
 
     void Pause()
@@ -65,5 +68,7 @@ public class PauseMenu : MonoBehaviour
 
         playerController.enabled = false;
         playerShoot.enabled = false;
+
+        musicController.ModifyMusicVolume(musicController.pauseSoundLevel);
     }
 }
